@@ -601,7 +601,7 @@ soundToggle.addEventListener('click', () => {
 
 
 /* =========================================
-   3. КАРУСЕЛЬ (КАК РАНЬШЕ)
+   3. КАРУСЕЛЬ
    ========================================= */
 (function () {
     const scene = document.getElementById('carouselScene');
@@ -950,21 +950,16 @@ setInterval(updateTimer, 1000);
 
 
 /* =========================================
-   6. КНОПКА В ФИНАЛЕ
+   6. КНОПКА В ФИНАЛЕ (ОПЛАТА)
    ========================================= */
 const heartBtn  = document.getElementById('heartBtn');
-const finalNote = document.getElementById('finalNote');
-const messages = [
-    'И не спал всю ночь!'
-];
-let clickCount = 0;
+
+// Ссылка на оплату Ozon
+const PAYMENT_URL = 'https://finance.ozon.ru/apps/sbp/ozonbankpay/01a1c127-958f-7555-903a-2a753fe59f51';
 
 heartBtn.addEventListener('click', () => {
-    finalNote.textContent = messages[clickCount % messages.length];
-    finalNote.classList.remove('show');
-    void finalNote.offsetWidth;
-    finalNote.classList.add('show');
-    clickCount++;
+    // Перенаправляем на форму оплаты
+    window.location.href = PAYMENT_URL;
 });
 
 
