@@ -601,7 +601,7 @@ soundToggle.addEventListener('click', () => {
 
 
 /* =========================================
-   3. КАРУСЕЛЬ
+   3. КАРУСЕЛЬ (исправленный радиус)
    ========================================= */
 (function () {
     const scene = document.getElementById('carouselScene');
@@ -613,12 +613,11 @@ soundToggle.addEventListener('click', () => {
     const itemCount = items.length;
 
     function computeRadius() {
-    const itemWidth = items[0].offsetWidth || 260;
-    // Ограничиваем радиус, чтобы карусель не раздувалась при большом количестве фото
-    const rawRadius = (itemWidth / 2) / Math.tan(Math.PI / itemCount) * 1.1;
-    const maxRadius = 400; // максимальный радиус в пикселях — подгоняй под свой экран
-    return Math.min(rawRadius, maxRadius);
-}
+        // Фиксированный радиус, чтобы круг не раздувался при 20 фото.
+        // 1.45 даёт компактную карусель с плотным перекрытием, как раньше.
+        const itemWidth = items[0].offsetWidth || 260;
+        return itemWidth * 1.45;
+    }
 
     let radius = computeRadius();
 
