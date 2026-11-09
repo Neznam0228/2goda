@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2 года вместе</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@300;400;500&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <button class="sound-toggle" id="soundToggle" aria-label="Выключить звук" title="Выключить звук">
+        <svg class="icon-on" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+            <path fill="currentColor" d="M4 9v6h4l5 4V5L8 9H4zm12.5 3a4.5 4.5 0 0 0-2.5-4v8a4.5 4.5 0 0 0 2.5-4zM14 3.2v2.1a6.8 6.8 0 0 1 0 13.4v2.1a8.9 8.9 0 0 0 0-17.6z"/>
+        </svg>
+        <svg class="icon-off" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+            <path fill="currentColor" d="M4 9v6h4l5 4V5L8 9H4zm15.6 1.6L17.4 12l2.2 2.2-1.4 1.4L16 13.4l-2.2 2.2-1.4-1.4L14.6 12l-2.2-2.2 1.4-1.4L16 10.6l2.2-2.2 1.4 1.4z"/>
+        </svg>
+    </button>
+
+    <audio id="bgMusic" src="audio/music.mp3" loop preload="auto"></audio>
+
+    <!-- КОНВЕРТ -->
+    <div class="envelope-screen" id="envelopeScreen">
+        <div class="envelope-scene">
+            <div class="envelope" id="envelope">
+                <div class="envelope__body"></div>
+                <div class="envelope__letter" id="envelopeLetter">
+                    <svg class="letter-heart" viewBox="0 0 100 90" aria-hidden="true">
+                        <path d="M50 85 C 15 60, 0 40, 0 25 C 0 10, 12 0, 25 0 C 35 0, 45 8, 50 18 C 55 8, 65 0, 75 0 C 88 0, 100 10, 100 25 C 100 40, 85 60, 50 85 Z" fill="#c96f4a"/>
+                    </svg>
+                </div>
+                <div class="envelope__flap" id="envelopeFlap"></div>
+            </div>
+            <p class="envelope-hint" id="envelopeHint">Нажми, чтобы открыть</p>
+        </div>
+    </div>
+
+    <div class="white-flash" id="whiteFlash"></div>
+
+    <!-- ВИДЕО-ИНТРО -->
+    <div class="video-intro hidden" id="videoIntro">
+        <canvas class="fireworks-canvas" id="fireworksCanvas"></canvas>
+        <div class="video-intro__frame">
+            <div class="video-intro__placeholder hidden" id="introPlaceholder">
+                <span class="video-intro__dot"></span>
+                <span class="video-intro__dot"></span>
+                <span class="video-intro__dot"></span>
+            </div>
+            <video class="video-intro__video" id="introVideo" muted playsinline preload="auto">
+                <source src="video/privet.mp4" type="video/mp4">
+            </video>
+        </div>
+    </div>
+
+    <!-- ОСНОВНОЙ САЙТ -->
+    <main class="site" id="site">
+        <section class="hero">
+            <div class="hero-content">
+                <h1 class="hero-title">Смотри чё было</h1>
+                <div class="hero-pointer" aria-hidden="true">👇</div>
+            </div>
+        </section>
+
+        <section class="carousel-section" id="carouselSection">
+            <div class="carousel-scene" id="carouselScene">
+                <div class="carousel" id="carousel">
+                    <div class="carousel__item"><img src="images/spider.jfif" alt="Момент 1" draggable="false"></div>
+                    <div class="carousel__item"><img src="images/apteka.jfif" alt="Момент 2" draggable="false"></div>
+                    <div class="carousel__item"><img src="images/krasota.jfif" alt="Момент 2" draggable="false"></div>
+                    <div class="carousel__item carousel__item--video">
+                        <video class="carousel__video" muted loop playsinline autoplay disablepictureinpicture disableremoteplayback preload="auto"><source src="video/celuet.mp4" type="video/mp4"></video>
+                    </div>
+                    <div class="carousel__item"><img src="images/fu.jfif" alt="Момент 2" draggable="false"></div>
+                    <div class="carousel__item"><img src="images/zerkalo.jfif" alt="Момент 2" draggable="false"></div>
+                    <div class="carousel__item carousel__item--video">
+                        <video class="carousel__video" muted loop playsinline autoplay disablepictureinpicture disableremoteplayback preload="auto"><source src="video/bilan.mp4" type="video/mp4"></video>
+                    </div>
+                    <div class="carousel__item"><img src="images/krasota.jfif" alt="Момент 3" draggable="false"></div>
+                    <div class="carousel__item"><img src="images/barca.jfif" alt="Момент 3" draggable="false"></div>
+                    <div class="carousel__item"><img src="images/ps.jfif" alt="Момент 4" draggable="false"></div>
+                    <div class="carousel__item carousel__item--video">
+                        <video class="carousel__video" muted loop playsinline autoplay disablepictureinpicture disableremoteplayback preload="auto"><source src="video/byot.mp4" type="video/mp4"></video>
+                    </div>
+                    <div class="carousel__item"><img src="images/AAAAA.jfif" alt="Момент 5" draggable="false"></div>
+                    <div class="carousel__item"><img src="images/yazik.jfif" alt="Момент 6" draggable="false"></div>
+                    <div class="carousel__item carousel__item--video">
+                        <video class="carousel__video" muted loop playsinline autoplay disablepictureinpicture disableremoteplayback preload="auto"><source src="video/mili.MP4" type="video/mp4"></video>
+                    </div>
+                    <div class="carousel__item"><img src="images/splu.jfif" alt="Момент 7" draggable="false"></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="timer-section">
+            <h2 class="section-title">Мы вместе уже</h2>
+            <div class="timer" id="timer">
+                <div class="timer-box"><span id="days">0</span><small>дней</small></div>
+                <div class="timer-box"><span id="hours">0</span><small>часов</small></div>
+                <div class="timer-box"><span id="minutes">0</span><small>минут</small></div>
+                <div class="timer-box"><span id="seconds">0</span><small>секунд</small></div>
+            </div>
+        </section>
+
+        <!-- НОВАЯ СЕКЦИЯ: ЧТО Я ЧУВСТВУЮ (вырванная страница из книги) -->
+        <section class="feelings">
+            <div class="book-page">
+                <div class="book-page__content">
+                    <p class="book-page__chapter">Глава 2</p>
+                    <h2 class="book-page__title">Что я чувствую</h2>
+
+                    <div class="book-page__text">
+                        <p>
+                            Иногда ты — причина моих бессонных ночей, и не только тогда, когда ты набухаешься.
+                        </p>
+                        <p>
+                            Мне кажется, что я тебя просто не заслуживаю(
+                        </p>
+                        <p>
+                            Я очень люблю проводить с тобой время, разлагаясь как последняя куча мусора.
+                        </p>
+                        <p>
+                            Ты — одна из главных причин, по которой я не хочу уходить в армию.
+                        </p>
+                        <p>
+                            Если бы я умел рисовать и попытался бы нарисовать твой портрет — получилась бы вторая Моно Лиза.
+                        </p>
+                        <p>
+                            Я очень надеюсь, что ты гордишься мной, и моими маленькими достижениями, потому что я тобой горжусь всегда!
+                        </p>
+                    </div>
+
+                    <p class="book-page__signature">Люблю же я тебя!</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ВИКТОРИНА -->
+        <section class="quiz">
+            <div class="quiz-card">
+                <h2 class="quiz-title">Небольшая проверка</h2>
+                <p class="quiz-subtitle">А ты помнишь, как всё было?</p>
+                <div class="quiz-body" id="quizBody"></div>
+                <div class="quiz-open" id="quizOpen">
+                    <div class="quiz-question-text">
+                        <span class="quiz-question-num">6.</span> Как ты думаешь, куда я хочу тебя сводить?
+                    </div>
+                    <textarea class="quiz-textarea" id="quizOpenInput" rows="2" placeholder="Напиши одно любое место..."></textarea>
+                    <button class="btn-primary quiz-send" id="quizSend">Отправить ответ</button>
+                    <p class="quiz-send-status" id="quizSendStatus"></p>
+                </div>
+                <div class="quiz-result hidden" id="quizResult">
+                    <p class="quiz-result-text" id="quizResultText"></p>
+                    <button class="btn-primary quiz-restart" id="quizRestart">Пройти заново</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="final">
+            <h2>Я чуть не заплакал пока делал этот сайт</h2>
+            <button class="btn-primary btn-light" id="heartBtn">Нажми на меня</button>
+            <p class="final-note" id="finalNote"></p>
+        </section>
+    </main>
+
+    <!-- ЭФФЕКТЫ ДЛЯ ВИКТОРИНЫ -->
+    <canvas class="mini-fireworks" id="miniFireworks"></canvas>
+    <canvas class="mini-thumbsdown" id="miniThumbsdown"></canvas>
+
+    <!-- ВСПЛЫВАЮЩЕЕ ОКНО ДЛЯ ВИКТОРИНЫ -->
+    <div class="quiz-toast" id="quizToast">
+        <div class="quiz-toast__text" id="quizToastText"></div>
+        <div class="quiz-toast__actions" id="quizToastActions"></div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
