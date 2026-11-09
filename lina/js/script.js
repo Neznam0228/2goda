@@ -601,7 +601,7 @@ soundToggle.addEventListener('click', () => {
 
 
 /* =========================================
-   3. КАРУСЕЛЬ (ИСПРАВЛЕННЫЙ РАДИУС)
+   3. КАРУСЕЛЬ (ФИНАЛЬНАЯ, ПРОСТАЯ)
    ========================================= */
 (function () {
     const scene = document.getElementById('carouselScene');
@@ -611,29 +611,22 @@ soundToggle.addEventListener('click', () => {
     if (items.length === 0) return;
 
     const itemCount = items.length;
-
-    function computeRadius() {
-        // Возвращаем нормальную геометрическую формулу для многоугольника.
-        // Коэффициент 1.15 делает так, чтобы фото чуть-чуть перекрывались,
-        // но не превращались в вертикальные полоски.
-        const itemWidth = items[0].offsetWidth || 260;
-        return (itemWidth / 2) / Math.tan(Math.PI / itemCount) * 1.15;
-    }
-
-    let radius = computeRadius();
+    
+    // Жестко заданный радиус в пикселях. 
+    // 450px — идеально для 20 карточек шириной 260px.
+    // Если захочешь больше или меньше — просто меняй это число.
+    let radius = 450;
 
     function layout() {
-        radius = computeRadius();
         items.forEach((item, i) => {
             const angle = (360 / itemCount) * i;
             item.style.transform = `rotateY(${angle}deg) translateZ(${radius}px)`;
         });
     }
     layout();
-    window.addEventListener('resize', layout);
 
     let rotation = 0;
-    const autoSpeed = -0.15; // вращение вправо
+    const autoSpeed = -0.15; // Вращение вправо
     let velocity = 0;
     let isDragging = false;
     let lastX = 0;
