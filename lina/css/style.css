@@ -24,9 +24,6 @@ body {
     overflow-x: hidden;
 }
 
-/* =========================================
-   КНОПКА MUTE
-   ========================================= */
 .sound-toggle {
     position: fixed;
     top: 20px;
@@ -56,15 +53,11 @@ body {
 }
 
 .sound-toggle:active { transform: scale(0.96); }
-
 .sound-toggle svg { display: block; }
 .sound-toggle .icon-off { display: none; }
 .sound-toggle.muted .icon-on  { display: none; }
 .sound-toggle.muted .icon-off { display: block; }
 
-/* =========================================
-   ЭКРАН 1: КОНВЕРТ
-   ========================================= */
 .envelope-screen {
     position: fixed;
     inset: 0;
@@ -190,9 +183,6 @@ body {
 .envelope.zooming ~ .envelope-hint { opacity: 0; animation: none; }
 @keyframes hintPulse { 0%, 100% { opacity: 0.5; } 50% { opacity: 1; } }
 
-/* =========================================
-   БЕЛАЯ ВСПЫШКА
-   ========================================= */
 .white-flash {
     position: fixed;
     inset: 0;
@@ -205,9 +195,6 @@ body {
 
 .white-flash.active { opacity: 1; pointer-events: all; }
 
-/* =========================================
-   ОВЕРЛЕЙ С ВИДЕО + САЛЮТ
-   ========================================= */
 .video-intro {
     position: fixed;
     inset: 0;
@@ -303,13 +290,9 @@ body {
     50%      { opacity: 1;   transform: scale(1); }
 }
 
-/* =========================================
-   ОСНОВНОЙ САЙТ
-   ========================================= */
 .site { opacity: 0; transition: opacity 1s ease; }
 .site.visible { opacity: 1; }
 
-/* HERO */
 .hero {
     min-height: 100vh;
     display: flex;
@@ -350,7 +333,6 @@ body {
 
 @keyframes pointDown { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(16px); } }
 
-/* КАРУСЕЛЬ */
 .carousel-section {
     padding: 80px 20px 100px;
     overflow: hidden;
@@ -426,7 +408,6 @@ body {
     .carousel__item { width: 180px; height: 240px; margin-left: -90px; margin-top: -120px; }
 }
 
-/* ТАЙМЕР */
 .timer-section { padding: 110px 20px; background: var(--cream-dark); text-align: center; }
 .timer { display: flex; justify-content: center; gap: 18px; flex-wrap: wrap; }
 .timer-box {
@@ -440,9 +421,6 @@ body {
 .timer-box span { display: block; font-family: 'Playfair Display', serif; font-size: 2.6rem; font-weight: 600; color: var(--terracotta); }
 .timer-box small { font-size: 0.78rem; text-transform: uppercase; letter-spacing: 2px; color: var(--brown-soft); }
 
-/* =========================================
-   ВЫРВАННАЯ СТРАНИЦА ИЗ КНИГИ
-   ========================================= */
 .feelings {
     padding: 130px 20px;
     background:
@@ -531,308 +509,4 @@ body {
     font-size: 0.95rem;
     letter-spacing: 6px;
     text-transform: uppercase;
-    color: var(--brown-soft);
-    margin-bottom: 16px;
-    font-style: italic;
-}
-
-.book-page__title {
-    text-align: center;
-    font-family: 'Cormorant Garamond', 'Playfair Display', serif;
-    font-size: clamp(2rem, 5vw, 2.8rem);
-    font-weight: 600;
-    color: var(--brown);
-    margin-bottom: 14px;
-    letter-spacing: 0.5px;
-    font-style: italic;
-}
-
-.book-page__title::after {
-    content: '❦';
-    display: block;
-    text-align: center;
-    font-size: 1.4rem;
-    color: var(--ochre);
-    margin-top: 14px;
-    font-style: normal;
-    opacity: 0.7;
-}
-
-.book-page__text {
-    margin-top: 40px;
-    font-family: 'Cormorant Garamond', 'Playfair Display', serif;
-    font-size: 1.25rem;
-    line-height: 1.85;
-    color: #3a2a1e;
-}
-
-.book-page__text p {
-    margin-bottom: 22px;
-    text-indent: 28px;
-    position: relative;
-}
-
-.book-page__text p:first-child::first-letter {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 3.4rem;
-    font-weight: 600;
-    float: left;
-    line-height: 0.9;
-    margin: 6px 8px 0 0;
-    color: var(--terracotta-dark);
-    text-indent: 0;
-}
-
-.book-page__text p:first-child {
-    text-indent: 0;
-}
-
-.book-page__signature {
-    text-align: right;
-    font-family: 'Cormorant Garamond', 'Playfair Display', serif;
-    font-size: 1.6rem;
-    font-style: italic;
-    color: var(--terracotta-dark);
-    margin-top: 50px;
-    font-weight: 600;
-    position: relative;
-}
-
-.book-page__signature::after {
-    content: '';
-    display: block;
-    width: 120px;
-    height: 2px;
-    background: var(--terracotta);
-    margin: 10px 0 0 auto;
-    border-radius: 50%;
-    transform: skewX(-20deg);
-    opacity: 0.6;
-}
-
-/* ВИКТОРИНА */
-.quiz { padding: 110px 20px; background: var(--cream); }
-.quiz-card {
-    max-width: 720px;
-    margin: 0 auto;
-    background: #fbf6ef;
-    padding: 55px 50px;
-    border-radius: 20px;
-    box-shadow: 0 24px 60px rgba(74, 55, 40, 0.1);
-    border-left: 5px solid var(--ochre);
-}
-.quiz-title { font-family: 'Playfair Display', serif; font-size: 2rem; margin-bottom: 8px; color: var(--terracotta-dark); }
-.quiz-subtitle { font-size: 0.95rem; color: var(--brown-soft); margin-bottom: 32px; font-style: italic; }
-.quiz-body { display: flex; flex-direction: column; gap: 26px; }
-.quiz-question { border-bottom: 1px solid rgba(217, 160, 91, 0.3); padding-bottom: 22px; }
-.quiz-question:last-child { border-bottom: none; padding-bottom: 0; }
-.quiz-question-text { font-weight: 500; font-size: 1.05rem; color: var(--brown); margin-bottom: 14px; line-height: 1.5; }
-.quiz-question-num { color: var(--terracotta); font-family: 'Playfair Display', serif; font-style: italic; margin-right: 6px; }
-.quiz-options { display: flex; flex-direction: column; gap: 10px; }
-
-.quiz-option {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    padding: 12px 16px;
-    background: #ffffff;
-    border: 1.5px solid rgba(217, 160, 91, 0.4);
-    border-radius: 10px;
-    cursor: pointer;
-    font-size: 0.95rem;
-    color: var(--brown);
-    transition: border-color 0.25s, background 0.25s, transform 0.15s;
-    text-align: left;
-    font-family: inherit;
-}
-
-.quiz-option:hover { border-color: var(--terracotta); background: #fffaf5; }
-.quiz-option:active { transform: scale(0.99); }
-
-.quiz-option__dot {
-    width: 18px;
-    height: 18px;
-    border-radius: 50%;
-    border: 2px solid rgba(217, 160, 91, 0.6);
-    flex-shrink: 0;
-    transition: background 0.2s, border-color 0.2s;
-    position: relative;
-}
-
-.quiz-option.correct { border-color: var(--green); background: rgba(107, 142, 78, 0.1); }
-.quiz-option.correct .quiz-option__dot { background: var(--green); border-color: var(--green); }
-.quiz-option.wrong { border-color: var(--red); background: rgba(184, 73, 58, 0.08); }
-.quiz-option.wrong .quiz-option__dot { background: var(--red); border-color: var(--red); }
-.quiz-option.disabled { cursor: default; pointer-events: none; }
-
-.quiz-open { margin-top: 30px; padding-top: 26px; border-top: 1px solid rgba(217, 160, 91, 0.3); }
-.quiz-textarea {
-    width: 100%;
-    margin-top: 14px;
-    padding: 12px 14px;
-    font-family: inherit;
-    font-size: 0.95rem;
-    color: var(--brown);
-    background: #fff;
-    border: 1.5px solid rgba(217, 160, 91, 0.4);
-    border-radius: 10px;
-    resize: vertical;
-    min-height: 60px;
-    outline: none;
-    transition: border-color 0.25s;
-}
-.quiz-textarea:focus { border-color: var(--terracotta); }
-.quiz-send { margin-top: 14px; padding: 14px 32px; font-size: 0.95rem; }
-.quiz-send:disabled { opacity: 0.5; cursor: not-allowed; transform: none; }
-.quiz-send-status { margin-top: 12px; font-size: 0.9rem; color: var(--brown-soft); font-style: italic; min-height: 20px; }
-.quiz-send-status.ok { color: var(--green); }
-.quiz-send-status.err { color: var(--red); }
-
-.quiz-result { margin-top: 30px; padding-top: 24px; border-top: 1px solid rgba(217, 160, 91, 0.3); text-align: center; }
-.quiz-result.hidden { display: none; }
-.quiz-result-text { font-family: 'Playfair Display', serif; font-size: 1.3rem; color: var(--terracotta-dark); margin-bottom: 22px; line-height: 1.5; }
-.quiz-restart { padding: 14px 32px; font-size: 0.95rem; }
-
-/* ФИНАЛ */
-.final { padding: 130px 20px; text-align: center; background: linear-gradient(135deg, #4a3728 0%, #7a6353 100%); color: #fbf6ef; }
-.final h2 { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 5vw, 3.4rem); margin-bottom: 40px; font-weight: 600; }
-.final-note { margin-top: 32px; font-size: 1.3rem; font-family: 'Playfair Display', serif; font-style: italic; min-height: 40px; color: var(--ochre); opacity: 0; transition: opacity 0.8s; }
-.final-note.show { opacity: 1; }
-
-/* ОБЩИЕ КНОПКИ */
-.btn-primary {
-    background: var(--terracotta);
-    color: #fff;
-    border: none;
-    padding: 16px 38px;
-    border-radius: 50px;
-    font-family: inherit;
-    font-size: 1rem;
-    letter-spacing: 0.5px;
-    cursor: pointer;
-    transition: transform 0.3s, background 0.3s, box-shadow 0.3s;
-    box-shadow: 0 12px 30px rgba(164, 84, 47, 0.3);
-}
-.btn-primary:hover { transform: translateY(-3px); background: var(--terracotta-dark); box-shadow: 0 16px 36px rgba(164, 84, 47, 0.4); }
-.btn-light { background: #fbf6ef; color: var(--terracotta-dark); }
-.btn-light:hover { background: #fff; }
-
-.section-title { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 5vw, 3rem); text-align: center; margin-bottom: 55px; color: var(--brown); }
-.section-title::after { content: ''; display: block; width: 60px; height: 2px; background: var(--ochre); margin: 18px auto 0; }
-
-/* КАНВАСЫ ДЛЯ ЭФФЕКТОВ */
-.mini-fireworks,
-.mini-thumbsdown {
-    position: fixed;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-    z-index: 10009;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-}
-.mini-fireworks.active,
-.mini-thumbsdown.active { opacity: 1; }
-
-/* ВСПЛЫВАЮЩЕЕ ОКНО ДЛЯ ВИКТОРИНЫ */
-.quiz-toast {
-    position: fixed;
-    left: 50%;
-    bottom: -160px;
-    transform: translateX(-50%);
-    background: #fbf6ef;
-    border-radius: 16px;
-    box-shadow: 0 20px 50px rgba(74, 55, 40, 0.3), 0 0 0 1px rgba(217, 160, 91, 0.5);
-    padding: 20px 28px;
-    max-width: 460px;
-    width: calc(100% - 40px);
-    z-index: 10011;
-    opacity: 0;
-    transition: bottom 0.4s cubic-bezier(0.2, 0.8, 0.2, 1), opacity 0.3s ease;
-    text-align: center;
-    font-family: 'Playfair Display', serif;
-}
-
-.quiz-toast.show { bottom: 24px; opacity: 1; }
-
-.quiz-toast__text {
-    font-size: 1.15rem;
-    color: var(--terracotta-dark);
-    margin-bottom: 10px;
-    line-height: 1.4;
-    font-weight: 600;
-}
-
-.quiz-toast__actions {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-}
-
-.quiz-toast__btn {
-    background: var(--terracotta);
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 50px;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 0.85rem;
-    cursor: pointer;
-    transition: background 0.2s, transform 0.2s;
-}
-
-.quiz-toast__btn:hover { background: var(--terracotta-dark); transform: scale(1.04); }
-.quiz-toast__btn.secondary { background: #ede1d1; color: var(--brown); }
-.quiz-toast__btn.secondary:hover { background: #e3d3bf; }
-
-.quiz-toast.correct { border-left: 5px solid var(--green); }
-.quiz-toast.correct .quiz-toast__text { color: var(--green); }
-.quiz-toast.wrong { border-left: 5px solid var(--red); }
-.quiz-toast.wrong .quiz-toast__text { color: var(--red); }
-
-@media (max-width: 600px) {
-    .envelope { width: 280px; height: 185px; }
-    .video-intro { padding: 16px; }
-    .video-intro__frame { padding: 10px; border-radius: 14px; }
-    .video-intro__placeholder { top: 10px; left: 10px; right: 10px; }
-    .hero { padding: 40px 20px; }
-    .hero-pointer { font-size: 6rem; }
-    .quiz { padding: 80px 20px; }
-    .quiz-card { padding: 36px 24px; }
-
-    .feelings { padding: 80px 16px; }
-    .book-page {
-        padding: 50px 32px;
-        transform: rotate(-0.3deg);
-        clip-path: polygon(
-            1% 0%, 8% 1.5%, 16% 0.4%, 25% 1.8%, 35% 0.6%,
-            45% 2%, 55% 0.5%, 65% 1.9%, 75% 0.7%, 85% 1.7%,
-            93% 0.5%, 100% 1.5%,
-            99.4% 10%, 99.7% 20%, 99.3% 30%, 99.7% 40%,
-            99.3% 50%, 99.7% 60%, 99.3% 70%, 99.7% 80%,
-            99.3% 90%, 100% 100%,
-            92% 99%, 84% 99.6%, 75% 98.9%, 65% 99.6%,
-            55% 98.8%, 45% 99.6%, 35% 98.9%, 25% 99.6%,
-            15% 98.8%, 8% 99.5%, 1% 99%,
-            0.6% 90%, 0.8% 80%, 0.4% 70%, 0.8% 60%,
-            0.4% 50%, 0.8% 40%, 0.4% 30%, 0.8% 20%,
-            0.4% 10%, 0.6% 5%
-        );
-    }
-    .book-page__text { font-size: 1.1rem; line-height: 1.75; }
-    .book-page__text p { text-indent: 22px; margin-bottom: 16px; }
-    .book-page__text p:first-child::first-letter { font-size: 2.6rem; margin: 4px 6px 0 0; }
-    .book-page__title { font-size: 1.8rem; }
-    .book-page__signature { font-size: 1.3rem; margin-top: 35px; }
-
-    .timer-box { padding: 18px 20px; min-width: 85px; }
-    .timer-box span { font-size: 1.9rem; }
-    .sound-toggle { top: 14px; right: 14px; width: 40px; height: 40px; }
-    .quiz-toast { padding: 16px 20px; }
-    .quiz-toast__text { font-size: 1rem; }
-}
-
-@media (prefers-reduced-motion: reduce) {
-    * { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
-}
+   
