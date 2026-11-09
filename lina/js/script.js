@@ -616,7 +616,7 @@ soundToggle.addEventListener('click', () => {
     const itemWidth = items[0].offsetWidth || 260;
     // Ограничиваем радиус, чтобы карусель не раздувалась при большом количестве фото
     const rawRadius = (itemWidth / 2) / Math.tan(Math.PI / itemCount) * 1.1;
-    const maxRadius = 380; // максимальный радиус в пикселях — подгоняй под свой экран
+    const maxRadius = 400; // максимальный радиус в пикселях — подгоняй под свой экран
     return Math.min(rawRadius, maxRadius);
 }
 
