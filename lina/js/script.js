@@ -617,7 +617,7 @@ soundToggle.addEventListener('click', () => {
         // Коэффициент 1.15 делает так, чтобы фото чуть-чуть перекрывались,
         // но не превращались в вертикальные полоски.
         const itemWidth = items[0].offsetWidth || 260;
-        return (itemWidth / 2) / Math.tan(Math.PI / itemCount) * 2;
+        return (itemWidth / 2) / Math.tan(Math.PI / itemCount) * 1.15;
     }
 
     let radius = computeRadius();
