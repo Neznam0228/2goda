@@ -601,7 +601,7 @@ soundToggle.addEventListener('click', () => {
 
 
 /* =========================================
-   3. КАРУСЕЛЬ (ФИНАЛЬНАЯ, ПРОСТАЯ)
+   3. КАРУСЕЛЬ (КАК РАНЬШЕ)
    ========================================= */
 (function () {
     const scene = document.getElementById('carouselScene');
@@ -611,22 +611,26 @@ soundToggle.addEventListener('click', () => {
     if (items.length === 0) return;
 
     const itemCount = items.length;
-    
-    // Жестко заданный радиус в пикселях. 
-    // 450px — идеально для 20 карточек шириной 260px.
-    // Если захочешь больше или меньше — просто меняй это число.
-    let radius = 450;
+
+    function computeRadius() {
+        const itemWidth = items[0].offsetWidth || 260;
+        return (itemWidth / 2) / Math.tan(Math.PI / itemCount) * 1.1;
+    }
+
+    let radius = computeRadius();
 
     function layout() {
+        radius = computeRadius();
         items.forEach((item, i) => {
             const angle = (360 / itemCount) * i;
             item.style.transform = `rotateY(${angle}deg) translateZ(${radius}px)`;
         });
     }
     layout();
+    window.addEventListener('resize', layout);
 
     let rotation = 0;
-    const autoSpeed = -0.15; // Вращение вправо
+    const autoSpeed = -0.15;
     let velocity = 0;
     let isDragging = false;
     let lastX = 0;
